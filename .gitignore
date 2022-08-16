@@ -1,0 +1,10 @@
+
+*.exe
+*.dll
+
+*.zip
+*.jar
+
+#folder
+02-backend/.metadata
+02-backend/Servers
