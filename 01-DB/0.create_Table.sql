@@ -9,9 +9,9 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- Schema simple-community
 -- -----------------------------------------------------
 -- show databases;
-show tables;
+-- show tables;
 -- use `simple-community`;
-drop database `simple-community`;
+-- drop database `simple-community`;
 -- -----------------------------------------------------
 -- Schema simple-community
 -- -----------------------------------------------------
