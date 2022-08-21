@@ -11,7 +11,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- show databases;
 -- show tables;
 -- use `simple-community`;
--- drop database `simple-community`;
+drop database `simple-community`;
 -- -----------------------------------------------------
 -- Schema simple-community
 -- -----------------------------------------------------
@@ -44,6 +44,7 @@ CREATE TABLE IF NOT EXISTS `simple-community`.`board` (
   `create_date` TIMESTAMP NOT NULL DEFAULT current_timestamp,
   `update_date` TIMESTAMP NULL DEFAULT NULL,
   `delete_date` TIMESTAMP NULL DEFAULT NULL,
+  `views` INT DEFAULT 0,
   `user_no` INT NOT NULL,
   PRIMARY KEY (`no`),
   INDEX `fk_board_user_idx` (`user_no` ASC) VISIBLE,
@@ -121,4 +122,4 @@ insert into `simple-community`.`attach`(`no`,`fileName`,`size`,`board_no`) value
 
 insert into `simple-community`.`comment`(`no`,`content`,`board_no`,`user_no`) values(1,'첫번째댓글임','1','2');
 
--- select * from `simple-community`.`comment`;
+select * from `simple-community`.`user`;

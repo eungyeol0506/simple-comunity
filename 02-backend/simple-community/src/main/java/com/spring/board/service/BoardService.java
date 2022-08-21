@@ -1,9 +1,9 @@
-package com.spring.board.persistence;
+package com.spring.board.service;
 
 import java.util.List;
 
 import com.spring.board.common.Board;
 
-public interface BoardDAO{
+public interface BoardService {
 	public List<Board> getBoardList();
 }

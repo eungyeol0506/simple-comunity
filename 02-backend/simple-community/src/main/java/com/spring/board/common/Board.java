@@ -16,6 +16,7 @@ public class Board {
 	Date createDate;
 	Date updateDate;
 	Date deleteDate;
+	int views;
 	User writer;
 
 }

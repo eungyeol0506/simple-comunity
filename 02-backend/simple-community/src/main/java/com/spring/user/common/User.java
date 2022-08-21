@@ -11,7 +11,8 @@ public class User {
 	int no;
 	String id;
 	String password;
-	Date registDate;
 	String email;
-	
+	Date registDate;
+	Date updateDate;
+	Date deleteDate;
 }

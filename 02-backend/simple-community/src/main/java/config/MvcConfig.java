@@ -14,7 +14,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Import(value={MyBatisConfig.class})
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages="com.stone")
+@ComponentScan(basePackages="com.spring")
 public class MvcConfig implements WebMvcConfigurer {
 
 	@Override

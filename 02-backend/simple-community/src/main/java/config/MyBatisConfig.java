@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement//spring을 통해 트랜잭션을 관리하겠
-@MapperScan(basePackages= {"com.stone"})//매퍼의 위치 지정->찾아서 빈 등록 됨
+@MapperScan(basePackages= {"com.spring"})//매퍼의 위치 지정->찾아서 빈 등록 됨
 public class MyBatisConfig {
 	// 선택한 데이터 접근 방식에 대한 객체 빈 등록
 	@Bean
