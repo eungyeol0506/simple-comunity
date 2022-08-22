@@ -15,6 +15,11 @@ public class BoardController {
 	@Qualifier("mainBoardService")
 	BoardService myboardService;
 	
+	@GetMapping("/simple_community")
+	public String printMain() {
+		return "/main/list";
+	}
+	
 	@GetMapping("/list")
 	public ModelAndView printBoardList() {
 		ModelAndView mv= new ModelAndView();

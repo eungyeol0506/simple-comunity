@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Simple-Community</title>
 </head>
 <body>
