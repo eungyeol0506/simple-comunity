@@ -27,7 +27,7 @@ simple-comunity
       * 게시판 목록 출력
    
 2. 게시판기능 
-   * Board list
+   * ~~Board list~~
    * Board detail
    * comment 기능
    * 첨부 기능
