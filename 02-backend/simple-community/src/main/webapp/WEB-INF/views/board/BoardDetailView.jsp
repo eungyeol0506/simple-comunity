@@ -1,5 +1,9 @@
+<%@page import="com.spring.board.common.Board"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<% 
+	Board board = (Board) request.getAttribute("board");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,17 +19,10 @@
 	<div>
 		<jsp:include page="/WEB-INF/views/main/navbar.jsp"/>
 	</div>
+
 	
-	<div class="container-fluid" style="height:auto">
-		<div class="h-100 row">
-			<div class="col-sm-3 p-3 bg-primary"></div>
-			<div class="col-sm-8 align-middle">
-			
-			<jsp:include page="/WEB-INF/views/board/BoardListView.jsp"/>
-			
-			</div>
-		</div>
-	</div>
+
+
 	
 	<div>
 		<jsp:include page="/WEB-INF/views/main/footer.jsp"/>

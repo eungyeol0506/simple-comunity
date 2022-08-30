@@ -22,5 +22,17 @@ public class BoardServiceImpl implements BoardService{
 	public List<Board> getBoardList() {
 		return myboardDAO.getBoardList();
 	}
+	@Transactional
+	@Override
+	public Board getBoardDetail(int no) {
+		myboardDAO.increaseViews(no);
+		return myboardDAO.getBoardByNo(no);
+	}
+	@Transactional
+	@Override
+	public Board getBoardDetail_withNoInc(int no) {
+		return myboardDAO.getBoardByNo(no);
+	}
 
+	
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.spring.board.common.Board;
 
@@ -14,9 +15,22 @@ public class BoardDAOImpl implements BoardDAO{
 
 	@Autowired IBoardMapper bm;
 	
+	@Transactional
 	@Override
 	public List<Board> getBoardList() {
 		return bm.getBoardList();
+	}
+	@Transactional
+	@Override
+	public Board getBoardByNo(int no) {
+		return bm.getBoardByNo(no);
+	}
+	
+	@Transactional
+	@Override
+	public void increaseViews(int no) {
+		bm.incViews(no);
+		
 	}
 
 }
