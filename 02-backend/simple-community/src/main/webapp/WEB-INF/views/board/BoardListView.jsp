@@ -21,12 +21,15 @@
 	<div>
 		<jsp:include page="/WEB-INF/views/main/navbar.jsp"/>
 	</div>
-	<div class="container-fluid" style="height:auto">
-		<div class="h-100 row">
-			<div class="col-sm-3 p-3 bg-dark">
+	<div class="container-fluid" style="height:auto" id="listBoard">
+		<div class="h-100 row ">
+			<div class="col-sm-3 bg-dark" >
+			
 			</div>
-			<div class="col-sm-8 align-middle">
-			 <table class="table table-hover">
+			
+			
+			<div class="col-sm-8 align-middle m-3">
+			 <table class="table table-hover p-1">
 			    <thead>
 			      <tr>
 			        <th>제목</th>
