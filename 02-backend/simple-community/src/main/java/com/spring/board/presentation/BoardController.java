@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -36,6 +37,22 @@ public class BoardController {
 		mv.addObject("board", board);
 		mv.setViewName("/board/BoardDetailView");
 		
+		return mv;
+	}
+	
+	@GetMapping("/wrtie")
+	public String prepareAddBoard() {
+		return "/board/BoardWrtieForm";
+	}
+	
+	@PostMapping("/write")
+	public ModelAndView addBoard(Board newboard) {
+		ModelAndView mv= new ModelAndView();
+		
+		myboardService.addBoard(newboard);
+		
+		
+		mv.setViewName("redirectView");
 		return mv;
 	}
 }

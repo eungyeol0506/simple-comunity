@@ -8,4 +8,6 @@ public interface BoardService {
 	public List<Board> getBoardList();
 	public Board getBoardDetail(int no);
 	public Board getBoardDetail_withNoInc(int no);
+	public void addBoard(Board newboard);
+	public void modifyBoard(Board modifiedBoard);
 }

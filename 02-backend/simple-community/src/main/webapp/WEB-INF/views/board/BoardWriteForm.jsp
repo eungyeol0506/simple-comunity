@@ -23,12 +23,10 @@
 			
 			<div class="col-sm-8 align-middle m-3" id="content">
 				<div class="container pt-2" >
-					<h2 class="post-title mb-1"><b><%=board.getTitle()%></b></h2>
-					<p class="post-meta mb-4">
-						<%=board.getCreateDate()%> by
-						<a href="#"><%=board.getWriter().getId()%></a>
-					</p>
-					
+					<h2 class="post-title mb-1"><b>
+					<input type="text" id="title" name="title" placeholder="TITLE">
+					</b></h2>
+					<br><br>
 				</div>
 				<div class="container" style="height:460px;">
 					<p><%=board.getContents()%>

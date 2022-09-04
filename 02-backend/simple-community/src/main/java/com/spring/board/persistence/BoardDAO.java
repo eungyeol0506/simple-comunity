@@ -8,4 +8,6 @@ public interface BoardDAO{
 	public List<Board> getBoardList();
 	public Board getBoardByNo(int no);
 	public void increaseViews(int no);
+	public void createBoard(Board newboard);
+	public void modifyBoard(Board modifiedBoard);
 }

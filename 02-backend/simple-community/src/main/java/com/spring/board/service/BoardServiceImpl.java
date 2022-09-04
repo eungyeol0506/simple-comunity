@@ -33,6 +33,16 @@ public class BoardServiceImpl implements BoardService{
 	public Board getBoardDetail_withNoInc(int no) {
 		return myboardDAO.getBoardByNo(no);
 	}
+	@Override
+	public void addBoard(Board newboard) {
+		myboardDAO.createBoard(newboard);
+		
+	}
+	@Override
+	public void modifyBoard(Board modifiedBoard) {
+		myboardDAO.modifyBoard(modifiedBoard);
+		
+	}
 
 	
 }
