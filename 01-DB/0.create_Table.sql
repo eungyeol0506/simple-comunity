@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `simple-community`.`board` (
   `views` INT DEFAULT 0,
   `user_no` INT NOT NULL,
   PRIMARY KEY (`no`),
-  INDEX `fk_board_user_idx` (`user_no` ASC) VISIBLE,
+  INDEX `fk_board_user_idx` (`user_no` ASC),
   CONSTRAINT `fk_board_user`
     FOREIGN KEY (`user_no`)
     REFERENCES `simple-community`.`user` (`no`)
@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `simple-community`.`attach` (
   `size` INT NOT NULL,
   `board_no` INT NOT NULL,
   PRIMARY KEY (`no`),
-  INDEX `fk_attach_board1_idx` (`board_no` ASC) VISIBLE,
+  INDEX `fk_attach_board1_idx` (`board_no` ASC),
   CONSTRAINT `fk_attach_board1`
     FOREIGN KEY (`board_no`)
     REFERENCES `simple-community`.`board` (`no`)
@@ -79,15 +79,15 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `simple-community`.`comment` (
   `no` INT NOT NULL AUTO_INCREMENT,
-  `content` TEXT NOT NULL,
-  `created_date` TIMESTAMP NOT NULL DEFAULT current_timestamp,
+  `contents` TEXT NOT NULL,
+  `create_date` TIMESTAMP NOT NULL DEFAULT current_timestamp,
   `update_date` TIMESTAMP NULL DEFAULT NULL,
   `delete_date` TIMESTAMP NULL DEFAULT NULL,
   `board_no` INT NOT NULL,
   `user_no` INT NOT NULL COMMENT 'writer\n',
   PRIMARY KEY (`no`),
-  INDEX `fk_comment_board1_idx` (`board_no` ASC) VISIBLE,
-  INDEX `fk_comment_user1_idx` (`user_no` ASC) VISIBLE,
+  INDEX `fk_comment_board1_idx` (`board_no` ASC),
+  INDEX `fk_comment_user1_idx` (`user_no` ASC),
   CONSTRAINT `fk_comment_board1`
     FOREIGN KEY (`board_no`)
     REFERENCES `simple-community`.`board` (`no`)
