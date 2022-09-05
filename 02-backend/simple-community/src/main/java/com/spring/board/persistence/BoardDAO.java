@@ -9,5 +9,6 @@ public interface BoardDAO{
 	public Board getBoardByNo(int no);
 	public void increaseViews(int no);
 	public void createBoard(Board newboard);
-	public void modifyBoard(Board modifiedBoard);
+	public void updateBoard(Board modifiedBoard);
+	public void deleteBoard(int no);
 }

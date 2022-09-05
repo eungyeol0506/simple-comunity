@@ -51,5 +51,10 @@ public interface IBoardMapper {
 	void createBoard(Board newboard);
 	
 	//게시판 수정
+	@Update("update `simple-community`.`board` set title=#{title}, contents=#{contents}, update_date=#{updateDate} where no=#{no}")
+	void updateBoard(Board board);
+	
 	//게시판 삭제
+	@Update("update `simple-community`.`board` set delete_date=#{deleteDate} where no=#{no}")
+	void deleteBoard(int no);
 }

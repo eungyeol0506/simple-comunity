@@ -1,6 +1,9 @@
 package com.spring.board.common;
 
 import java.util.Date;
+import java.util.List;
+
+import org.springframework.web.multipart.MultipartFile;
 
 import com.spring.user.common.User;
 
@@ -19,4 +22,6 @@ public class Board {
 	int views;
 	User writer;
 
+//	List<MultipartFile> attachFiles;
+//	List<Attach> attaches;
 }

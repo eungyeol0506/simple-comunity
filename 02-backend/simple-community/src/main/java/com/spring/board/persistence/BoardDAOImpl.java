@@ -32,13 +32,23 @@ public class BoardDAOImpl implements BoardDAO{
 		bm.incViews(no);
 		
 	}
+	@Transactional
 	@Override
 	public void createBoard(Board newboard) {
 		bm.createBoard(newboard);
 	}
+	
+	@Transactional
 	@Override
-	public void modifyBoard(Board modifiedBoard) {
-		//--
+	public void updateBoard(Board modifiedBoard) {
+		bm.updateBoard(modifiedBoard);
+	}
+	
+	
+	@Transactional
+	@Override
+	public void deleteBoard(int no) {
+		bm.deleteBoard(no);
 	}
 
 }
