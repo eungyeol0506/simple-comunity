@@ -21,19 +21,20 @@ simple-comunity
       * 회원가입
       * 회원로그인
    * 클래스 다이어그램
-      * ~~게시판 목록 출력, 게시판 상세 출력, 게시판 작성~~
-      * 게시판 수정
+      * ~~게시글(board)~~
+      * 회원
+      * 게시글에 댓글/첨부 추가
    * 시퀀스 다이어그램
-      * 게시판 목록 출력
+      * 게시판기능
    
 2. 게시판기능 
-   * ~~Board list~~
-   * Board detail
+   * ~~Board list, detail~~
+   * Board wrtie, modify, delete
    * comment 기능
    * 첨부 기능
    * 페이징 기능
 3. 회원기능
-   * 회원 manage 기능
+   * 회원 crud, manage 기능
    * 게시판 수정
 4. CSS 스타일 지정
    
