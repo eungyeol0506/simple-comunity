@@ -24,9 +24,9 @@ simple-comunity
       * ~~게시글(board)~~
       * 회원
       * 게시글에 댓글/첨부 추가
-   * 시퀀스 다이어그램
-      * 게시판기능
-   
+   * flowchart
+      * user flowchart
+      * logic flowchart   
 2. 게시판기능 
    * ~~Board list, detail~~
    * Board wrtie, modify, delete
