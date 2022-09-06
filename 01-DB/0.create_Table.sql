@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `simple-community`.`board` (
   `views` INT DEFAULT 0,
   `user_no` INT NOT NULL,
   PRIMARY KEY (`no`),
-  INDEX `fk_board_user_idx` (`user_no` ASC),
+  INDEX `fk_board_user_idx` (`user_no` ASC) VISIBLE,
   CONSTRAINT `fk_board_user`
     FOREIGN KEY (`user_no`)
     REFERENCES `simple-community`.`user` (`no`)
@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `simple-community`.`attach` (
   `size` INT NOT NULL,
   `board_no` INT NOT NULL,
   PRIMARY KEY (`no`),
-  INDEX `fk_attach_board1_idx` (`board_no` ASC),
+  INDEX `fk_attach_board1_idx` (`board_no` ASC) VISIBLE,
   CONSTRAINT `fk_attach_board1`
     FOREIGN KEY (`board_no`)
     REFERENCES `simple-community`.`board` (`no`)
@@ -86,8 +86,8 @@ CREATE TABLE IF NOT EXISTS `simple-community`.`comment` (
   `board_no` INT NOT NULL,
   `user_no` INT NOT NULL COMMENT 'writer\n',
   PRIMARY KEY (`no`),
-  INDEX `fk_comment_board1_idx` (`board_no` ASC),
-  INDEX `fk_comment_user1_idx` (`user_no` ASC),
+  INDEX `fk_comment_board1_idx` (`board_no` ASC) VISIBLE,
+  INDEX `fk_comment_user1_idx` (`user_no` ASC) VISIBLE,
   CONSTRAINT `fk_comment_board1`
     FOREIGN KEY (`board_no`)
     REFERENCES `simple-community`.`board` (`no`)
@@ -120,6 +120,6 @@ insert into `simple-community`.`board`(`no`,`title`,`contents`,`user_no`) values
 
 insert into `simple-community`.`attach`(`no`,`fileName`,`size`,`board_no`) values(1,'test.TXT',17,5);
 
-insert into `simple-community`.`comment`(`no`,`content`,`board_no`,`user_no`) values(1,'첫번째댓글임','1','2');
+insert into `simple-community`.`comment`(`no`,`contents`,`board_no`,`user_no`) values(1,'첫번째댓글임','1','2');
 
 select * from `simple-community`.`user`;
