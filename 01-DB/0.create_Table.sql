@@ -11,7 +11,8 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- show databases;
 -- show tables;
 -- use `simple-community`;
-drop database `simple-community`;
+drop database IF EXISTS `simple-community`;
+
 -- -----------------------------------------------------
 -- Schema simple-community
 -- -----------------------------------------------------
@@ -44,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `simple-community`.`board` (
   `create_date` TIMESTAMP NOT NULL DEFAULT current_timestamp,
   `update_date` TIMESTAMP NULL DEFAULT NULL,
   `delete_date` TIMESTAMP NULL DEFAULT NULL,
-  `views` INT DEFAULT 0,
+  `topic` VARCHAR(50) NOT NULL,
   `user_no` INT NOT NULL,
   PRIMARY KEY (`no`),
   INDEX `fk_board_user_idx` (`user_no` ASC) VISIBLE,
@@ -105,6 +106,7 @@ SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
+
 -- -----------------------------------------------------
 -- Create example data
 -- -----------------------------------------------------
@@ -112,11 +114,11 @@ insert into `simple-community`.`user`(`no`,`name`,`id`,`password`,`email`) value
 insert into `simple-community`.`user`(`no`,`name`,`id`,`password`,`email`) values(2,'-----','tester','tester','tester@naveer.com');
 insert into `simple-community`.`user`(`no`,`name`,`id`,`password`,`email`) values(3,'a1234','id1','pw1','a1234@daumn.net');
 
-insert into `simple-community`.`board`(`no`,`title`,`contents`,`user_no`) values(1,'title1','contents1',3);
-insert into `simple-community`.`board`(`no`,`title`,`contents`,`user_no`) values(2,'title2','contents2',3);
-insert into `simple-community`.`board`(`no`,`title`,`contents`,`user_no`) values(3,'title3','contents3',3);
-insert into `simple-community`.`board`(`no`,`title`,`contents`,`user_no`) values(4,'title4','contents4',3);
-insert into `simple-community`.`board`(`no`,`title`,`contents`,`user_no`) values(5, 'title5','attach here',1);
+insert into `simple-community`.`board`(`no`,`title`,`contents`,`topic`,`user_no`) values(1,'title1','contents1','daily',3);
+insert into `simple-community`.`board`(`no`,`title`,`contents`,`topic`,`user_no`) values(2,'title2','contents2','daily',3);
+insert into `simple-community`.`board`(`no`,`title`,`contents`,`topic`,`user_no`) values(3,'title3','contents3','daily',3);
+insert into `simple-community`.`board`(`no`,`title`,`contents`,`topic`,`user_no`) values(4,'title4','contents4','daily',3);
+insert into `simple-community`.`board`(`no`,`title`,`contents`,`topic`,`user_no`) values(5, 'title5','attach here','daily',1);
 
 insert into `simple-community`.`attach`(`no`,`fileName`,`size`,`board_no`) values(1,'test.TXT',17,5);
 
